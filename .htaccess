@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Please enter password"
+AuthUserFile /var/www/html/.htpasswd
+Require foo
+
