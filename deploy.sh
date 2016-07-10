@@ -16,7 +16,7 @@ docker pull mysql
 # run the container on top of the image
 docker run -p 3900:3306 --name mysql -e MYSQL_ROOT_PASSWORD=toor911 -d mysql:latest
 
-git clone https://github.com/pyhub/aws-deploy.git && cd aws-deploy && docker build -t aws-deploy/local:apache .
+git clone https://github.com/pyhub/aws-deploy.git && cd aws-deploy && docker build -t aws-deploy/local:apache -f /home/ubuntu/Dockerfile
 
 docker run -d -p 80:80 --name apache --link mysql:mysql -v /var/www/html:/var/www/html aws-deploy/local:apache
 
